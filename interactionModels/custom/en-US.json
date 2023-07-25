@@ -1,0 +1,564 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "fiesta",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.183453220478.1361568332375.1197204823475"
+                }
+              ],
+              "type": "festividad",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.183453220478.1361568332375"
+              }
+            }
+          ],
+          "name": "cuantoFalta",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "fiestas",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.75475667206.980994399336.1031815837751"
+                }
+              ],
+              "type": "festividad",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.75475667206.980994399336"
+              }
+            }
+          ],
+          "name": "cuandoEs",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "dato",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.499941142758.1327256338283"
+              }
+            }
+          ],
+          "name": "datosCuriosos",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "semana",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.299734081587.265408389666.889570238029",
+                  "value": "4"
+                },
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.299734081587.265408389666.460458829872",
+                  "value": "1"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.299734081587.265408389666"
+              }
+            }
+          ],
+          "name": "crearRecordatorio",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "producto",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1572032912794.1510623955064.746768139237"
+                }
+              ],
+              "type": "productos",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1572032912794.1510623955064"
+              }
+            },
+            {
+              "name": "moneda",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1572032912794.741211410677.65268858265"
+                }
+              ],
+              "type": "monedas",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1572032912794.741211410677"
+              }
+            }
+          ],
+          "name": "cuantoCuesta",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "fiesta",
+              "type": "festividad",
+              "samples": [
+                "{fiesta}"
+              ]
+            }
+          ],
+          "name": "cuantoFalta",
+          "samples": [
+            "how much time until the {fiesta}",
+            "how much time until the",
+            "how much time until"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "fiestas",
+              "type": "festividad",
+              "samples": [
+                "{fiestas}"
+              ]
+            }
+          ],
+          "name": "cuandoEs",
+          "samples": [
+            "when is {fiestas} celebrated",
+            "when is the {fiestas} celebrated",
+            "how much time until {fiestas}",
+            "how much time until the {fiestas}",
+            "when is the {fiestas} festival",
+            "when is the {fiestas} event",
+            "when is {fiestas}",
+            "when is the {fiestas}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "dato",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{dato}"
+              ]
+            }
+          ],
+          "name": "datosCuriosos",
+          "samples": [
+            "tell me about {dato}",
+            "tell me something interesting about {dato}",
+            "tell me something curious about {dato}",
+            "tell me a curious fact about {dato}",
+            "tell me an interesting fact about {dato}",
+            "tell me about the {dato}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "siguienteDato",
+          "samples": [
+            "another",
+            "next",
+            "another one",
+            "yes"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "anteriorDato",
+          "samples": [
+            "go back",
+            "give me the previous curious fact",
+            "repeat the previous curious fact"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "noIntent",
+          "samples": [
+            "no"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "catalogo",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "catalogoIntent",
+          "samples": [
+            "show me the {catalogo} catalog"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "semana",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "in {semana} week",
+                "in {semana} weeks",
+                "{semana} week",
+                "{semana} weeks",
+                "{semana}"
+              ]
+            }
+          ],
+          "name": "crearRecordatorio",
+          "samples": [
+            "set a reminder {semana}",
+            "yes {semana}",
+            "yes",
+            "set a reminder "
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "producto",
+              "type": "productos",
+              "samples": [
+                "{producto}"
+              ]
+            },
+            {
+              "name": "moneda",
+              "type": "monedas",
+              "samples": [
+                "{moneda}",
+                "in {moneda}"
+              ]
+            }
+          ],
+          "name": "cuantoCuesta",
+          "samples": [
+            "how much does the",
+            "how much does the {producto} ",
+            "how much does the {producto} cost in ",
+            "how much does the {producto} cost in {moneda}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "distanciaIntent",
+          "samples": [
+            "tell me the distance to Huejutla de Reyes Hidalgo",
+            "tell me the distance to Huejutla de Reyes ",
+            "tell me the distance to Huejutla",
+            "what is the distance to Huejutla de Reyes Hidalgo",
+            "what is the distance to Huejutla ",
+            "what is the distance to Huejutla de Reyes Hidalgo"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "carnaval"
+              }
+            },
+            {
+              "name": {
+                "value": "guadalupana"
+              }
+            },
+            {
+              "name": {
+                "value": "holy week"
+              }
+            },
+            {
+              "name": {
+                "value": "nochebuena fair"
+              }
+            },
+            {
+              "name": {
+                "value": "tordo festival"
+              }
+            },
+            {
+              "name": {
+                "value": "patrotic festivities"
+              }
+            },
+            {
+              "name": {
+                "value": "xantolo"
+              }
+            }
+          ],
+          "name": "festividad"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "orange ceramic mug"
+              }
+            },
+            {
+              "name": {
+                "value": "blue ceramic mug"
+              }
+            },
+            {
+              "name": {
+                "value": "clay tequila shot"
+              }
+            },
+            {
+              "name": {
+                "value": "clay plate"
+              }
+            },
+            {
+              "name": {
+                "value": "clay pot"
+              }
+            },
+            {
+              "name": {
+                "value": "clay vase"
+              }
+            },
+            {
+              "name": {
+                "value": "brown clay vase"
+              }
+            },
+            {
+              "name": {
+                "value": "clay jar"
+              }
+            },
+            {
+              "name": {
+                "value": "clay incense holder"
+              }
+            },
+            {
+              "name": {
+                "value": "clay casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "clay basket"
+              }
+            },
+            {
+              "name": {
+                "value": "brown clay burrito"
+              }
+            },
+            {
+              "name": {
+                "value": "white clay burrito"
+              }
+            }
+          ],
+          "name": "productos"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "pounds"
+              }
+            },
+            {
+              "name": {
+                "value": "euros"
+              }
+            },
+            {
+              "name": {
+                "value": "yen"
+              }
+            },
+            {
+              "name": {
+                "value": "dollars"
+              }
+            },
+            {
+              "name": {
+                "value": "pesos"
+              }
+            }
+          ],
+          "name": "monedas"
+        }
+      ],
+      "invocationName": "corazon huasteco"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sure, but for which festival?"
+          }
+        ],
+        "id": "Elicit.Slot.183453220478.1361568332375"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t have information about the festival {fiesta}, please try another one."
+          }
+        ],
+        "id": "Slot.Validation.183453220478.1361568332375.1197204823475"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t have information about the festival {fiestas}, please try another one."
+          }
+        ],
+        "id": "Slot.Validation.75475667206.980994399336.1031815837751"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sure, but for which festival?"
+          }
+        ],
+        "id": "Elicit.Slot.75475667206.980994399336"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sure, about what?"
+          }
+        ],
+        "id": "Elicit.Slot.499941142758.1327256338283"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sure, I can help with that. However, to set the reminder, I need to know how many weeks before you want to receive the notification."
+          }
+        ],
+        "id": "Elicit.Slot.299734081587.265408389666"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "The value cannot be less than one week."
+          }
+        ],
+        "id": "Slot.Validation.299734081587.265408389666.889570238029"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "The value cannot be greater than four weeks."
+          }
+        ],
+        "id": "Slot.Validation.299734081587.265408389666.460458829872"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "The product {producto} is not available in the Corazon Huasteco catalog, please try another one."
+          }
+        ],
+        "id": "Slot.Validation.1572032912794.1510623955064.746768139237"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please, indicate the currency you want to know the price in."
+          }
+        ],
+        "id": "Elicit.Slot.1572032912794.741211410677"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Unfortunately, I don\u0027t have information available about the currency {moneda} at the moment, please try another one."
+          }
+        ],
+        "id": "Slot.Validation.1572032912794.741211410677.65268858265"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please, enter the name of the product."
+          }
+        ],
+        "id": "Elicit.Slot.1572032912794.1510623955064"
+      }
+    ]
+  }
+}
